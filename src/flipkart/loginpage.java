@@ -1,17 +1,22 @@
 package flipkart;
 
 import java.util.Scanner;
+import java.util.concurrent.TimeUnit;
+
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
+import org.testng.annotations.Test;
 
 public class loginpage {
-	public static void main(String[] args) {
-		Scanner sc = new Scanner(System.in);
-		System.out.println("enter the number");
-		int num = sc.nextInt();
-		if(num%2==0) {
-			System.out.println("number is odd");
-		}else {
-			System.out.println("number is even");
-		}
+	
+	
+	@Test
+	public  void main() {
+		System.setProperty("webdriver.chrome.driver", "chromedriver.exe");
+		WebDriver driver= new ChromeDriver();
+		driver.manage().timeouts().pageLoadTimeout(56, TimeUnit.SECONDS);
+		driver.get("file://C:/Users/priyanka/Desktop/selenium/Offline%20Website/index.html");
+		driver.close();
 	}
 
 }
